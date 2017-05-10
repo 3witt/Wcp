@@ -40,8 +40,8 @@
 					<div class="row">
 						<div class="col-md-12">
 							<ol class="breadcrumb">
-								<li class="active">WCP</li>
-								<li class="active">创建知识</li>
+								<li class="active">一启莱熊吧</li>
+								<li class="active">创建文档</li>
 							</ol>
 						</div>
 					</div>
