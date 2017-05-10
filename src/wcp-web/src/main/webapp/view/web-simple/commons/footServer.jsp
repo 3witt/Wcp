@@ -15,8 +15,8 @@
 							href="frame/index.do"><img src="text/img/consoleIcon.png"
 								alt="一启莱熊吧管理控制台" class="img-thumbnail"
 								style="width: 64px; height: 64px;" /><br />管理控制台</a></li>
-					</c:if> --%>
-				</ul>
+					</c:if>
+				</ul> --%>
 			</div>
 		</div>
 	</div>

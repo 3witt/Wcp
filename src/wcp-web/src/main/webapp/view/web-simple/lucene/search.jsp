@@ -18,6 +18,7 @@
 <body>
 	<jsp:include page="../commons/head.jsp"></jsp:include>
 	<jsp:include page="../commons/superContent.jsp"></jsp:include>
+	<jsp:include page="../commons/promoPhoto.jsp"></jsp:include>
 	<div class="containerbox">
 		<div class="container ">
 			<div style="margin-top: 20px;"></div>

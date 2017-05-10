@@ -9,11 +9,17 @@
 	var url = "webusermessage/showHomeMessage.do";
 	$.post(url, {}, function(obj){
 		var message = "未读消息【" + obj.unReadCount + "】";
-		if(obj.newMessage){
+		/* if(obj.newMessage){
 			message += "；最新消息："+obj.newMessage + "；";
 		}
 		var href = "<a href='webuser/PubHome.do?type=usermessage&userid=${USEROBJ.id}'>"+message+"</a>";
-		$("#showHomeMessageId").html(href);
+		$("#showHomeMessageId").html(href); */
+
+		if(obj.newMessage){
+			message += "；最新消息："+obj.newMessage + "；";
+			var href = "<a href='webuser/PubHome.do?type=usermessage&userid=${USEROBJ.id}'>"+message+"</a>";
+			$("#showHomeMessageId").html(href); 
+		}
 	},"json");
 </script>
 </c:if>

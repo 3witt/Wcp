@@ -20,11 +20,12 @@
 </head>
 <body>
 	<jsp:include page="commons/head.jsp"></jsp:include>
-	<jsp:include page="commons/superContent.jsp"></jsp:include>
+	<jsp:include page="commons/superContent.jsp"></jsp:include>	
 	<!-- /.carousel -->
 	<div class="containerbox">
 		<div class="container">
 			<div style="margin-top: 20px;"></div>
+			<jsp:include page="commons/promoPhoto.jsp"></jsp:include>	
 			<div class="widget-box shadow-box hidden-xs hidden-sm">
 				<div class="stream-list p-stream">
 					<div class="stream-item" id="loop-30">
