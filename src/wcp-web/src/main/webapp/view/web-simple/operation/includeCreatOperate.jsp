@@ -2,7 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="/view/conf/farmtag.tld" prefix="PF"%>
 <!-- Single button -->
-<div class="btn-group hidden-xs" style="float: right;">
+<!-- <div class="btn-group hidden-xs" style="float: right;"> -->
+<div class="btn-group" style="float: right;">
 	<button type="button" class="btn btn-default btn-sm dropdown-toggle" style="margin-left: 4px;"
 		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		创建档案 <span class="caret"></span>

@@ -63,7 +63,7 @@
 				<li class="active"><a href="login/webout.html"><span
 						class="glyphicon glyphicon-off"></span>&nbsp;注销</a></li>
 			</c:if>
-			<c:if test="${USEROBJ!=null}">
+			<c:if test="${USEROBJ.type=='3'}">
 				<li class="active"><a href="frame/index.do"><span
 						class="glyphicon glyphicon-wrench"></span>&nbsp;管理系统</a></li>
 			</c:if>

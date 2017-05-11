@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50171
 File Encoding         : 65001
 
-Date: 2017-05-11 00:55:59
+Date: 2017-05-12 02:30:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -89,6 +89,8 @@ INSERT INTO `alone_auth_action` VALUES ('402894ca4ae0e797014ae1ab12120031', 'doc
 INSERT INTO `alone_auth_action` VALUES ('402888a850472ac50150472d85070009', 'weburl/list', '文档管理_推荐服务', '', '20151008191936', '20151008191936', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
 INSERT INTO `alone_auth_action` VALUES ('402888a8509d16e201509d191db90009', 'farmReleaseRanking/list', '文档管理_用户文档排名', '', '20151025114440', '20151025114440', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
 INSERT INTO `alone_auth_action` VALUES ('402888a850bcceeb0150bcd7f9780009', 'usermessage/list', '用户消息', '', '20151031154122', '20151031154122', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
+INSERT INTO `alone_auth_action` VALUES ('402880ea5bf7504c015bf8b1e35a0019', '', '权限管理', null, '20170512020739', '20170512020739', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
+INSERT INTO `alone_auth_action` VALUES ('402880ea5bf7504c015bf8b68037001b', 'indexset/list', '门户管理_首页宣传图管理', '', '20170512021241', '20170512022223', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for alone_auth_actiontree
@@ -137,6 +139,22 @@ INSERT INTO `alone_auth_actiontree` VALUES ('402894ca4a9a155d014a9a1afe60000e', 
 INSERT INTO `alone_auth_actiontree` VALUES ('402888a850472ac50150472e2d14000a', '92', '402894ca4a9a155d014a9a16561d0002', '推荐服务', '402894ca4a9a155d014a9a16561d0002402888a850472ac50150472e2d14000a', '', '2', '20151008192019', '20151008192206', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '402888a850472ac50150472d85070009', 'alone', 'icon-star', null, '');
 INSERT INTO `alone_auth_actiontree` VALUES ('402888a84f970dad014f971545c3000a', '9', '402894ca4a9a155d014a9a16561d0002', '置顶文档', '402894ca4a9a155d014a9a16561d0002402888a84f970dad014f971545c3000a', '', '2', '20150904143957', '20150904144052', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '402888a84f970dad014f971444550009', 'alone', 'icon-upcoming-work', null, '');
 INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000a', '94', '402894ca4a9a155d014a9a16561d0002', '用户消息', '402894ca4a9a155d014a9a16561d0002402888a850bcceeb0150bcd86c2e000a', '', '2', '20151031154151', '20160505155138', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '402888a850bcceeb0150bcd7f9780009', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000b', '3', '40288b854a38408e014a384c4f3c0002', '数据字典', '402894ca4a9a155d014a9a16561d0002402888a850bcceeb0150bcd86c2e000b', '', '2', '20151031154151', '20160505155138', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a38974f014a38bd26a0002a', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000c', '3', '40288b854a38408e014a384c4f3c0002', '个性化参数', '402894ca4a9a155d014a9a16561d0002402888a850bcceeb0150bcd86c2e000c', '', '2', '20151031154151', '20160505155138', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a38974f014a38bb431b0028', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000d', '3', '402880ea5bf7504c015bf8b1e35a001a', '权限定义', '402880ea5bf7504c015bf8b1e35a001a402888a850bcceeb0150bcd86c2e000d', '', '2', '20151031154151', '20160505155138', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a38408e014a384de88a0005', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000e', '3', '402880ea5bf7504c015bf8b1e35a001a', '权限构造', '402880ea5bf7504c015bf8b1e35a001a402888a850bcceeb0150bcd86c2e000e', '', '2', '20151031154151', '20160505155138', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a38974f014a38b3a6700017', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000f', '3', '40288b854a38408e014a384c4f3c0002', '参数定义', '402894ca4a9a155d014a9a16561d0002402888a850bcceeb0150bcd86c2e000f', '', '2', '20151031154151', '20160505155138', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a38974f014a38ba24f90024', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000g', '3', '40288b854a38408e014a384c4f3c0002', '系统参数', '40288b854a38408e014a384c4f3c0002402888a850bcceeb0150bcd86c2e000g', '', '2', '20151031154151', '20160505155138', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a38974f014a38bafb830026', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402888a850bcceeb0150bcd86c2e000h', '3', '402880ea5bf7504c015bf8a9dee40016', '组件库', '402880ea5bf7504c015bf8a9dee40016402888a850bcceeb0150bcd86c2e000h', '', '2', '20151031154151', '20170512015338', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a3daac8014a3dfe03990005', 'alone', 'icon-email', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8a5da890012', '3', '402880ea5bf7504c015bf8a9dee40016', '门户配置', '402880ea5bf7504c015bf8a9dee40016402880ea5bf7504c015bf8a5da890012', '', '2', '20170512015430', '20170512015430', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a3daac8014a3dfefcce0007', 'alone', '', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8a751d50013', '3', '40288b854a38408e014a384c4f3c0002', '表单分类', '40288b854a38408e014a384c4f3c0002402880ea5bf7504c015bf8a751d50013', '', '2', '20170512015606', '20170512015606', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a3e037e014a3e1d76810003', 'alone', '', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8a80eda0014', '3', '40288b854a38408e014a384c4f3c0002', '查询表单配置', '40288b854a38408e014a384c4f3c0002402880ea5bf7504c015bf8a80eda0014', '', '2', '20170512015655', '20170512015655', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a3e037e014a3e1e46150005', 'alone', '', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8a8c61c0015', '3', '40288b854a38408e014a384c4f3c0002', '数据库管理', '40288b854a38408e014a384c4f3c0002402880ea5bf7504c015bf8a8c61c0015', '', '2', '20170512015742', '20170512015742', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a50d918014a50dbdc460002', 'alone', '', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8a9dee40016', '4', 'NONE', '门户管理', '402880ea5bf7504c015bf8a9dee40016', '', '1', '20170512015853', '20170512021035', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '', 'alone', 'icon-home', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8acbe440017', '1', '40288b854a50d918014a50dc82980004', '触发器定义', '40288b854a38408e014a384c4f3c000240288b854a50d918014a50dc82980004402880ea5bf7504c015bf8acbe440017', '', '2', '20170512020202', '20170512020202', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a50d918014a50dcfa580005', 'alone', '', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8adcd6e0018', '2', '40288b854a50d918014a50dc82980004', '任务定义', '40288b854a38408e014a384c4f3c000240288b854a50d918014a50dc82980004402880ea5bf7504c015bf8adcd6e0018', '', '2', '20170512020311', '20170512020311', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '40288b854a50d918014a50ddb7400007', 'alone', '', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8b1e35a001a', '5', 'NONE', '权限管理', '402880ea5bf7504c015bf8b1e35a001a', '', '1', '20170512020739', '20170512021042', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '402880ea5bf7504c015bf8b1e35a0019', 'alone', 'icon-config', null, '');
+INSERT INTO `alone_auth_actiontree` VALUES ('402880ea5bf7504c015bf8b94e77001c', '1', '402880ea5bf7504c015bf8a9dee40016', '首页宣传图管理', '402880ea5bf7504c015bf8a9dee40016402880ea5bf7504c015bf8b94e77001c', '', '2', '20170512021545', '20170512021551', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '402880ea5bf7504c015bf8b68037001b', 'alone', '', null, '');
 
 -- ----------------------------
 -- Table structure for alone_auth_organization
@@ -224,6 +242,13 @@ INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0010', 
 INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0011', '402888a850472ac50150472e2d14000a', '402888ac547fe10501548001be3a0001');
 INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0012', '402888a8509d16e201509d1a934d000a', '402888ac547fe10501548001be3a0001');
 INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0013', '402888a850bcceeb0150bcd86c2e000a', '402888ac547fe10501548001be3a0001');
+INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0014', '402888a850bcceeb0150bcd86c2e000b', '402888ac547fe10501548001be3a0001');
+INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0015', '402888a850bcceeb0150bcd86c2e000c', '402888ac547fe10501548001be3a0001');
+INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0016', '402888a850bcceeb0150bcd86c2e000d', '402888ac547fe10501548001be3a0001');
+INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0017', '402888a850bcceeb0150bcd86c2e000e', '402888ac547fe10501548001be3a0001');
+INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0018', '402888a850bcceeb0150bcd86c2e000f', '402888ac547fe10501548001be3a0001');
+INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0019', '402888a850bcceeb0150bcd86c2e000g', '402888ac547fe10501548001be3a0001');
+INSERT INTO `alone_auth_postaction` VALUES ('402888ac547fe10501548001e39b0020', '402888a850bcceeb0150bcd86c2e000h', '402888ac547fe10501548001be3a0001');
 
 -- ----------------------------
 -- Table structure for alone_auth_user
@@ -249,9 +274,9 @@ CREATE TABLE `alone_auth_user` (
 -- ----------------------------
 -- Records of alone_auth_user
 -- ----------------------------
-INSERT INTO `alone_auth_user` VALUES ('40288b854a329988014a329a12f30002', '系统管理员', '45A6964B87BEC90B5B6C6414FAF397A7', '', '3', '20141210130925', '20151019195604', 'userId', '40288b854a329988014a329a12f30002', '1', 'sysadmin', '20170511003106', '402888ac5073d0dc01507468856d00c2');
-INSERT INTO `alone_auth_user` VALUES ('402880ea5bf2c05d015bf32e0e700007', 'www', '9F0B9CD27D6AA203A7A20D00A7603167', null, '3', '20170511002533', '20170511003350', 'witt', '40288b854a329988014a329a12f30002', '1', 'witt', '20170511005338', '402880ea5bf2c05d015bf32e0b180006');
-INSERT INTO `alone_auth_user` VALUES ('402880ea5bf2c05d015bf34716c80011', 'yh', '9F515A6E413BD5D5DC82B79C7B771FE4', '', '1', '20170511005254', '20170511005254', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', 'yh', '20170511005302', null);
+INSERT INTO `alone_auth_user` VALUES ('40288b854a329988014a329a12f30002', '系统管理员', '45A6964B87BEC90B5B6C6414FAF397A7', '', '3', '20141210130925', '20151019195604', 'userId', '40288b854a329988014a329a12f30002', '1', 'sysadmin', '20170512022239', '402888ac5073d0dc01507468856d00c2');
+INSERT INTO `alone_auth_user` VALUES ('402880ea5bf2c05d015bf32e0e700007', 'www', '9F0B9CD27D6AA203A7A20D00A7603167', null, '3', '20170511002533', '20170511003350', 'witt', '40288b854a329988014a329a12f30002', '1', 'witt', '20170511222432', '402880ea5bf2c05d015bf32e0b180006');
+INSERT INTO `alone_auth_user` VALUES ('402880ea5bf2c05d015bf34716c80011', 'yh', '9F515A6E413BD5D5DC82B79C7B771FE4', '', '1', '20170511005254', '20170511005254', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', 'yh', '20170511225523', null);
 
 -- ----------------------------
 -- Table structure for alone_auth_userorg
@@ -511,6 +536,8 @@ CREATE TABLE `farm_doc` (
 INSERT INTO `farm_doc` VALUES ('1111', '', '系统管理员', '20170510021106', '1', null, '猫', null, null, null, '1', '402880ea5bee66b0015bee6852f30003', '20170510021106', '20170510021106', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '402880ea5bee66b0015bee6852f10002', '0', '1', '402880ea5bee66b0015bee6852f10001', null);
 INSERT INTO `farm_doc` VALUES ('20120819131342_PJQR4.thumb.600_0.jpeg', '', '系统管理员', '20170510022805', '5', null, '', null, null, null, '1', '402880ea5bee6c8f015bee77dfef0004', '20170510022805', '20170510022805', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '402880ea5bee6c8f015bee77dfea0003', '0', '1', '402880ea5bee6c8f015bee77dfea0002', null);
 INSERT INTO `farm_doc` VALUES ('2017 02 01', '啊撒旦撒旦撒旦', '系统管理员', '20170510204114', '1', null, ',撒旦', null, null, null, '1', '402880ea5bf258be015bf260af7a0003', '20170510204114', '20170510204114', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '402880ea5bf258be015bf260af740002', '0', '1', '402880ea5bf258be015bf260af740001', null);
+INSERT INTO `farm_doc` VALUES ('安全守则', 'abcdefghijklmnopqrstuvwxvz', 'www', '20170511194708', '1', null, '字母', null, null, null, '1', '402880ea5bf7504c015bf75585470002', '20170511194708', '20170511194708', 'www', '402880ea5bf2c05d015bf32e0e700007', 'www', '402880ea5bf2c05d015bf32e0e700007', null, '402880ea5bf7504c015bf75585470001', '0', '1', '402880ea5bf7504c015bf755853b0000', null);
+INSERT INTO `farm_doc` VALUES ('如何', '如何成为神一样的存在啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊如何成为魔鬼奥术大师多撒大奥所大所大所大所大所多撒大所呵呵呵哒trfjkads7tasygudkhasuildhas;dhasj;dlasj;daskd;askdkasl考的；阿萨德哈', 'yh', '20170511224522', '1', null, ',啊啊,啊啊啊,静安,静安寺,殴打,如何,上来,成为,呵呵,来看', null, null, null, '1', '402880ea5bf7504c015bf7f8b2770010', '20170511224522', '20170511224522', 'yh', '402880ea5bf2c05d015bf34716c80011', 'yh', '402880ea5bf2c05d015bf34716c80011', null, '402880ea5bf7504c015bf7f8b260000f', '0', '1', '402880ea5bf7504c015bf7f8b260000e', null);
 INSERT INTO `farm_doc` VALUES ('asdfasdf', 'asdf', '系统管理员', '20160718113220', '1', null, '', null, null, null, '1', '402888ac55fc0e8e0155fc0fca2a0004', '20160718113221', '20160718113221', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '402888ac55fc0e8e0155fc0fc9550003', '0', '1', '402888ac55fc0e8e0155fc0fc9550002', null);
 
 -- ----------------------------
@@ -563,6 +590,7 @@ INSERT INTO `farm_docfile` VALUES ('\\2017\\05\\10\\02\\', '587e2e720d8443a39afd
 INSERT INTO `farm_docfile` VALUES ('\\2017\\05\\10\\02\\', '682efb7fe3554a1ab237059a9ca67844', '1', '20120819131342_PJQR4.thumb.600_0.jpeg', '.jpeg', '33540', 'upload_bf625c2f_8618_499d_b1ec_825f5a50d1e1_00000000.tmp', '402880ea5bee79c9015bee7a0ba30000', '20170510023027', '20170510023027', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '0');
 INSERT INTO `farm_docfile` VALUES ('\\2017\\05\\11\\00\\', 'f9da32e8c9fd43dfa192f33ee5f62cd3', '1', '20120819131342_PJQR4.thumb.600_0.jpeg', '.jpeg', '33540', 'upload_8a4b13df_c39e_4853_bc1b_01ec9d9c12c7_00000000.tmp', '402880ea5bf2c05d015bf32e0b180006', '20170511002532', '20170511002532', 'none', 'none', 'none', 'none', null, '0');
 INSERT INTO `farm_docfile` VALUES ('\\2017\\05\\11\\00\\', 'c8b87730b2784d13996800cc25a4b9ba', '1', '20120819131342_PJQR4.thumb.600_0.jpeg', '.jpeg', '33540', 'upload_8a4b13df_c39e_4853_bc1b_01ec9d9c12c7_00000001.tmp', '402880ea5bf2c05d015bf333aa81000a', '20170511003141', '20170511003141', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '0');
+INSERT INTO `farm_docfile` VALUES ('\\2017\\05\\11\\22\\', '7a85dc7458234f4e8c84964b013318bd', '0', '18bf23ce-15b1-4db4-934b-1f23593fd4b1.png', 'png', '12429', '18bf23ce-15b1-4db4-934b-1f23593fd4b1.tmp', '402880ea5bf7504c015bf7e74b3f0004', '20170511222622', '20170511222622', 'NONE', 'NONE', 'NONE', 'NONE', 'http://localhost:8080/wcp//text/img/yqlxb-logo.png', '0');
 
 -- ----------------------------
 -- Table structure for farm_docgroup
@@ -674,10 +702,12 @@ CREATE TABLE `farm_docruninfo` (
 -- ----------------------------
 -- Records of farm_docruninfo
 -- ----------------------------
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee66b0015bee6852f10001', '11', '85', '201705110053', '0', '0', '0', '4');
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee6c8f015bee77dfea0002', '3', '32', '201705102207', '0', '0', '0', '0');
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf258be015bf260af740001', '3', '35', '201705110054', '0', '0', '0', '0');
-INSERT INTO `farm_docruninfo` VALUES ('402888ac55fc0e8e0155fc0fc9550002', '3', '10', '201705011606', '0', '1', '-1', '1');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee66b0015bee6852f10001', '16', '32', '201705111948', '0', '0', '0', '4');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee6c8f015bee77dfea0002', '4', '19', '201705111720', '0', '0', '0', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf258be015bf260af740001', '5', '19', '201705111730', '0', '0', '0', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf7504c015bf755853b0000', '5', '58', '201705112241', '1', '0', '1', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf7504c015bf7f8b260000e', '3', '45', '201705112255', '0', '0', '0', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402888ac55fc0e8e0155fc0fc9550002', '5', '44', '201705112256', '0', '1', '-1', '1');
 
 -- ----------------------------
 -- Table structure for farm_docruninfo_detail
@@ -705,6 +735,7 @@ CREATE TABLE `farm_docruninfo_detail` (
 -- Records of farm_docruninfo_detail
 -- ----------------------------
 INSERT INTO `farm_docruninfo_detail` VALUES ('402880ea5bc7c6e7015bc7c8a397001d', '20170502141106', '系统管理员', '40288b854a329988014a329a12f30002', '1', null, '3', '402888ac55fc0e8e0155fc0fc9550003', '402888ac55fc0e8e0155fc0fc9550002', '127.0.0.1');
+INSERT INTO `farm_docruninfo_detail` VALUES ('402880ea5bf7504c015bf7f521d8000d', '20170511224129', '系统管理员', '40288b854a329988014a329a12f30002', '1', null, '2', '402880ea5bf7504c015bf75585470001', '402880ea5bf7504c015bf755853b0000', '0:0:0:0:0:0:0:1');
 
 -- ----------------------------
 -- Table structure for farm_doctext
@@ -733,6 +764,8 @@ CREATE TABLE `farm_doctext` (
 INSERT INTO `farm_doctext` VALUES ('<img src=\"actionImg/Publoadfile.do?id=402880ea5bee66b0015bee680d4b0000\" alt=\"\" />', null, null, '402880ea5bee66b0015bee6852f10002', '20170510021106', '20170510021106', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', 'CREAT', '1', null);
 INSERT INTO `farm_doctext` VALUES ('', null, null, '402880ea5bee6c8f015bee77dfea0003', '20170510022805', '20170510022805', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', 'CREAT', '1', null);
 INSERT INTO `farm_doctext` VALUES ('啊撒旦撒旦撒旦', null, null, '402880ea5bf258be015bf260af740002', '20170510204114', '20170510204114', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', 'CREAT', '1', null);
+INSERT INTO `farm_doctext` VALUES ('abcdefghijklmnopqrstuvwxvz', null, null, '402880ea5bf7504c015bf75585470001', '20170511194708', '20170511194708', 'www', '402880ea5bf2c05d015bf32e0e700007', 'www', '402880ea5bf2c05d015bf32e0e700007', 'CREAT', '1', null);
+INSERT INTO `farm_doctext` VALUES ('<h1>\r\n	如何成为神一样的存在\r\n</h1>\r\n<p>\r\n	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊\r\n</p>\r\n<h1>\r\n	如何成为魔鬼\r\n</h1>\r\n<p>\r\n	奥术大师多撒大奥所大所大所大所大所多撒大所\r\n</p>\r\n<h1>\r\n	呵呵呵哒\r\n</h1>\r\n<p>\r\n	trfjkads7tasygudkhasuildhas;dhasj;dlasj;daskd;askdkasl考的；阿萨德哈师大哈斯的骄傲搜ID静安寺殴打静安寺殴打静安寺殴打静安寺哦\r\n</p>\r\n<h1>\r\n	嗯嗯嗯呃\r\n</h1>\r\n<p>\r\n	看见爱上都会拉斯科技等哈说来的哈上来看的哈收到了卡上来看的哈杀戮空间\r\n</p>', null, null, '402880ea5bf7504c015bf7f8b260000f', '20170511224522', '20170511224522', 'yh', '402880ea5bf2c05d015bf34716c80011', 'yh', '402880ea5bf2c05d015bf34716c80011', 'CREAT', '1', null);
 INSERT INTO `farm_doctext` VALUES ('asdf', null, null, '402888ac55fc0e8e0155fc0fc9550003', '20160718113220', '20160718113220', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', 'CREAT', '1', null);
 
 -- ----------------------------
@@ -770,12 +803,12 @@ CREATE TABLE `farm_doctype` (
 -- ----------------------------
 -- Records of farm_doctype
 -- ----------------------------
-INSERT INTO `farm_doctype` VALUES ('文学类', null, null, '1', '1', null, null, null, null, '402880ea5bf258be015bf26056050000', '20170510204051', '20170511001804', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '1', '402888ac55fc0e8e0155fc0f7fb20001', '402888ac55fc0e8e0155fc0f7fb20001402880ea5bf258be015bf26056050000', null, '0', '0', '0');
-INSERT INTO `farm_doctype` VALUES ('运动类', null, null, '2', '1', null, null, null, null, '402880ea5bf2c05d015bf32760660000', '20170511001815', '20170511001815', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '1', '402888ac55fc0e8e0155fc0f7fb20001', '402888ac55fc0e8e0155fc0f7fb20001402880ea5bf2c05d015bf32760660000', null, '0', '0', '0');
-INSERT INTO `farm_doctype` VALUES ('休闲类', null, null, '3', '1', null, null, null, null, '402880ea5bf2c05d015bf3279d750001', '20170511001831', '20170511001831', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '1', '402888ac55fc0e8e0155fc0f7fb20001', '402888ac55fc0e8e0155fc0f7fb20001402880ea5bf2c05d015bf3279d750001', null, '0', '0', '0');
-INSERT INTO `farm_doctype` VALUES ('安全知识', null, null, '1', '1', null, null, null, null, '402880ea5bf2c05d015bf328158e0002', '20170511001902', '20170511001902', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '1', 'NONE', '402880ea5bf2c05d015bf328158e0002', null, '0', '0', '0');
-INSERT INTO `farm_doctype` VALUES ('奖励', null, null, '3', '1', null, null, null, null, '402880ea5bf2c05d015bf328ac470003', '20170511001940', '20170511001940', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '1', 'NONE', '402880ea5bf2c05d015bf328ac470003', null, '0', '0', '0');
-INSERT INTO `farm_doctype` VALUES ('惩罚', null, null, '4', '1', null, null, null, null, '402880ea5bf2c05d015bf328dba20004', '20170511001952', '20170511001952', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '1', 'NONE', '402880ea5bf2c05d015bf328dba20004', null, '0', '0', '0');
+INSERT INTO `farm_doctype` VALUES ('文学类', null, null, '1', '3', null, null, null, null, '402880ea5bf258be015bf26056050000', '20170510204051', '20170511194449', '系统管理员', '40288b854a329988014a329a12f30002', 'www', '402880ea5bf2c05d015bf32e0e700007', null, '1', '402888ac55fc0e8e0155fc0f7fb20001', '402888ac55fc0e8e0155fc0f7fb20001402880ea5bf258be015bf26056050000', null, '0', '0', '0');
+INSERT INTO `farm_doctype` VALUES ('运动类', null, null, '2', '3', null, null, null, null, '402880ea5bf2c05d015bf32760660000', '20170511001815', '20170511194454', '系统管理员', '40288b854a329988014a329a12f30002', 'www', '402880ea5bf2c05d015bf32e0e700007', null, '1', '402888ac55fc0e8e0155fc0f7fb20001', '402888ac55fc0e8e0155fc0f7fb20001402880ea5bf2c05d015bf32760660000', null, '0', '0', '0');
+INSERT INTO `farm_doctype` VALUES ('休闲类', null, null, '3', '3', null, null, null, null, '402880ea5bf2c05d015bf3279d750001', '20170511001831', '20170511194459', '系统管理员', '40288b854a329988014a329a12f30002', 'www', '402880ea5bf2c05d015bf32e0e700007', null, '1', '402888ac55fc0e8e0155fc0f7fb20001', '402888ac55fc0e8e0155fc0f7fb20001402880ea5bf2c05d015bf3279d750001', null, '0', '0', '0');
+INSERT INTO `farm_doctype` VALUES ('安全知识', null, null, '1', '3', null, null, null, null, '402880ea5bf2c05d015bf328158e0002', '20170511001902', '20170511194507', '系统管理员', '40288b854a329988014a329a12f30002', 'www', '402880ea5bf2c05d015bf32e0e700007', null, '1', 'NONE', '402880ea5bf2c05d015bf328158e0002', null, '0', '0', '0');
+INSERT INTO `farm_doctype` VALUES ('奖励', null, null, '3', '3', null, null, null, null, '402880ea5bf2c05d015bf328ac470003', '20170511001940', '20170511194521', '系统管理员', '40288b854a329988014a329a12f30002', 'www', '402880ea5bf2c05d015bf32e0e700007', null, '1', 'NONE', '402880ea5bf2c05d015bf328ac470003', null, '0', '0', '0');
+INSERT INTO `farm_doctype` VALUES ('惩罚', null, null, '4', '3', null, null, null, null, '402880ea5bf2c05d015bf328dba20004', '20170511001952', '20170511194525', '系统管理员', '40288b854a329988014a329a12f30002', 'www', '402880ea5bf2c05d015bf32e0e700007', null, '1', 'NONE', '402880ea5bf2c05d015bf328dba20004', null, '0', '0', '0');
 INSERT INTO `farm_doctype` VALUES ('游戏', null, null, '2', '1', null, null, null, null, '402888ac55fc0e8e0155fc0f7fb20001', '20160718113202', '20170511001908', '系统管理员', '40288b854a329988014a329a12f30002', '系统管理员', '40288b854a329988014a329a12f30002', null, '1', 'NONE', '402888ac55fc0e8e0155fc0f7fb20001', null, '0', '0', '0');
 
 -- ----------------------------
@@ -1155,10 +1188,12 @@ CREATE TABLE `farm_rf_doctype` (
 -- ----------------------------
 -- Records of farm_rf_doctype
 -- ----------------------------
-INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bee66b0015bee6852f40004', '402888ac55fc0e8e0155fc0f7fb20001', '402880ea5bee66b0015bee6852f30003');
-INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bee6c8f015bee77dff00005', '402888ac55fc0e8e0155fc0f7fb20001', '402880ea5bee6c8f015bee77dfef0004');
-INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bf258be015bf260af7b0004', '402880ea5bf258be015bf26056050000', '402880ea5bf258be015bf260af7a0003');
-INSERT INTO `farm_rf_doctype` VALUES ('402888ac55fc0e8e0155fc0fca2b0005', '402888ac55fc0e8e0155fc0f7fb20001', '402888ac55fc0e8e0155fc0fca2a0004');
+INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bee66b0015bee6852f40004', '402880ea5bf258be015bf26056050000', '402880ea5bee66b0015bee6852f30003');
+INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bee6c8f015bee77dff00005', '402880ea5bf2c05d015bf32760660000', '402880ea5bee6c8f015bee77dfef0004');
+INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bf258be015bf260af7b0004', '402880ea5bf2c05d015bf3279d750001', '402880ea5bf258be015bf260af7a0003');
+INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bf7504c015bf75585480003', '402880ea5bf2c05d015bf328158e0002', '402880ea5bf7504c015bf75585470002');
+INSERT INTO `farm_rf_doctype` VALUES ('402880ea5bf7504c015bf7f8b2770011', '402880ea5bf2c05d015bf328ac470003', '402880ea5bf7504c015bf7f8b2770010');
+INSERT INTO `farm_rf_doctype` VALUES ('402888ac55fc0e8e0155fc0fca2b0005', '402880ea5bf2c05d015bf328dba20004', '402888ac55fc0e8e0155fc0fca2a0004');
 
 -- ----------------------------
 -- Table structure for farm_top
