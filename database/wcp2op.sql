@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50171
 File Encoding         : 65001
 
-Date: 2017-05-12 02:30:00
+Date: 2017-05-12 17:20:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -90,7 +90,7 @@ INSERT INTO `alone_auth_action` VALUES ('402888a850472ac50150472d85070009', 'web
 INSERT INTO `alone_auth_action` VALUES ('402888a8509d16e201509d191db90009', 'farmReleaseRanking/list', '文档管理_用户文档排名', '', '20151025114440', '20151025114440', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
 INSERT INTO `alone_auth_action` VALUES ('402888a850bcceeb0150bcd7f9780009', 'usermessage/list', '用户消息', '', '20151031154122', '20151031154122', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
 INSERT INTO `alone_auth_action` VALUES ('402880ea5bf7504c015bf8b1e35a0019', '', '权限管理', null, '20170512020739', '20170512020739', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
-INSERT INTO `alone_auth_action` VALUES ('402880ea5bf7504c015bf8b68037001b', 'indexset/list', '门户管理_首页宣传图管理', '', '20170512021241', '20170512022223', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
+INSERT INTO `alone_auth_action` VALUES ('402880ea5bf7504c015bf8b68037001b', 'docfile/indexflielist', '门户管理_首页宣传图管理', '', '20170512021241', '20170512171019', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for alone_auth_actiontree
@@ -274,7 +274,7 @@ CREATE TABLE `alone_auth_user` (
 -- ----------------------------
 -- Records of alone_auth_user
 -- ----------------------------
-INSERT INTO `alone_auth_user` VALUES ('40288b854a329988014a329a12f30002', '系统管理员', '45A6964B87BEC90B5B6C6414FAF397A7', '', '3', '20141210130925', '20151019195604', 'userId', '40288b854a329988014a329a12f30002', '1', 'sysadmin', '20170512022239', '402888ac5073d0dc01507468856d00c2');
+INSERT INTO `alone_auth_user` VALUES ('40288b854a329988014a329a12f30002', '系统管理员', '45A6964B87BEC90B5B6C6414FAF397A7', '', '3', '20141210130925', '20151019195604', 'userId', '40288b854a329988014a329a12f30002', '1', 'sysadmin', '20170512171718', '402888ac5073d0dc01507468856d00c2');
 INSERT INTO `alone_auth_user` VALUES ('402880ea5bf2c05d015bf32e0e700007', 'www', '9F0B9CD27D6AA203A7A20D00A7603167', null, '3', '20170511002533', '20170511003350', 'witt', '40288b854a329988014a329a12f30002', '1', 'witt', '20170511222432', '402880ea5bf2c05d015bf32e0b180006');
 INSERT INTO `alone_auth_user` VALUES ('402880ea5bf2c05d015bf34716c80011', 'yh', '9F515A6E413BD5D5DC82B79C7B771FE4', '', '1', '20170511005254', '20170511005254', '40288b854a329988014a329a12f30002', '40288b854a329988014a329a12f30002', '1', 'yh', '20170511225523', null);
 
@@ -702,12 +702,12 @@ CREATE TABLE `farm_docruninfo` (
 -- ----------------------------
 -- Records of farm_docruninfo
 -- ----------------------------
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee66b0015bee6852f10001', '16', '32', '201705111948', '0', '0', '0', '4');
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee6c8f015bee77dfea0002', '4', '19', '201705111720', '0', '0', '0', '0');
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf258be015bf260af740001', '5', '19', '201705111730', '0', '0', '0', '0');
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf7504c015bf755853b0000', '5', '58', '201705112241', '1', '0', '1', '0');
-INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf7504c015bf7f8b260000e', '3', '45', '201705112255', '0', '0', '0', '0');
-INSERT INTO `farm_docruninfo` VALUES ('402888ac55fc0e8e0155fc0fc9550002', '5', '44', '201705112256', '0', '1', '-1', '1');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee66b0015bee6852f10001', '16', '14', '201705111948', '0', '0', '0', '4');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bee6c8f015bee77dfea0002', '4', '12', '201705111720', '0', '0', '0', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf258be015bf260af740001', '5', '12', '201705111730', '0', '0', '0', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf7504c015bf755853b0000', '5', '19', '201705112241', '1', '0', '1', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402880ea5bf7504c015bf7f8b260000e', '3', '17', '201705112255', '0', '0', '0', '0');
+INSERT INTO `farm_docruninfo` VALUES ('402888ac55fc0e8e0155fc0fc9550002', '5', '17', '201705112256', '0', '1', '-1', '1');
 
 -- ----------------------------
 -- Table structure for farm_docruninfo_detail

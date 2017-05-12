@@ -62,6 +62,12 @@ public class ActionFarmDocfileQuery extends WebUtils {
 				.returnModelAndView("doc/DocfileResult");
 	}
 	
+	@RequestMapping("/indexflielist")
+	public ModelAndView indexflie(HttpSession session) {
+		return ViewMode.getInstance()
+				.returnModelAndView("doc/IndexflieResult");
+	}
+	
 	/**
 	 * 提交修改数据
 	 * 
