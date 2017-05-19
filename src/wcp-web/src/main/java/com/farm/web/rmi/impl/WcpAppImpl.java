@@ -41,11 +41,11 @@ public class WcpAppImpl extends UnicastRemoteObject implements WcpAppInter {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public String creatHTMLKnow(String knowtitle, String knowtypeId, String text, String knowtag, String currentUserId)
+	public String creatHTMLKnow(String knowtitle, String videoid, String knowtypeId, String text, String knowtag, String currentUserId)
 			throws RemoteException, DocCreatErrorExcepiton {
 		DocEntire doc = null;
 		try {
-			doc = KnowServiceImpl.creatKnow(knowtitle, knowtypeId, text, knowtag, POP_TYPE.PUB, POP_TYPE.PUB, null,
+			doc = KnowServiceImpl.creatKnow(knowtitle, videoid, knowtypeId, text, knowtag, POP_TYPE.PUB, POP_TYPE.PUB, null,
 					null);
 		} catch (Exception e) {
 			throw new DocCreatErrorExcepiton(e);

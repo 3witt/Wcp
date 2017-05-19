@@ -61,6 +61,13 @@ public interface WeburlServiceInter {
 	 * List<Weburl>
 	 */
 	public List<Map<String, Object>> getList();
+	
+	/**
+	 * 获取列表集合
+	 * @return
+	 * List<Weburl>
+	 */
+	public List<Weburl> getWeburlList();
 
 	/**
 	 * 删除附件

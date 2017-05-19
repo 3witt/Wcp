@@ -19,7 +19,7 @@
 </style>
 <div class="row column_box">
 	<div class="col-sm-12">
-		<span class="glyphicon glyphicon-fire  column_title">游戏/知识分类</span>
+		<span class="glyphicon glyphicon-fire  column_title">游戏/须知分类</span>
 	</div>
 </div>
 <div class="panel panel-default  side_column">

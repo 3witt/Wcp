@@ -37,7 +37,7 @@ public interface KnowServiceInter {
 	 *            当前操作用户
 	 * @return 文档对象
 	 */
-	public DocEntire creatKnow(String knowtitle, String knowtypeId, String text, String knowtag, POP_TYPE pop_type_edit,
+	public DocEntire creatKnow(String knowtitle, String videoid, String knowtypeId, String text, String knowtag, POP_TYPE pop_type_edit,
 			POP_TYPE pop_type_read, String groupId, LoginUser currentUser);
 
 	/**
@@ -56,7 +56,7 @@ public interface KnowServiceInter {
 	 * @return
 	 * @throws CanNoWriteException
 	 */
-	public DocEntire editKnow(String id, String knowtitle, String knowtype, String text, String knowtag,
+	public DocEntire editKnow(String id, String videoid, String knowtitle, String knowtype, String text, String knowtag,
 			POP_TYPE pop_type_edit, POP_TYPE pop_type_read, String groupId, LoginUser currentUser, String editNote)
 					throws CanNoWriteException;
 
@@ -73,7 +73,7 @@ public interface KnowServiceInter {
 	 *            修改备注
 	 * @return
 	 */
-	public DocEntire editKnow(String docid, String text, String knowtag, LoginUser currentUser, String editNote)
+	public DocEntire editKnow(String docid, String videoid, String text, String knowtag, LoginUser currentUser, String editNote)
 			throws CanNoWriteException;
 
 

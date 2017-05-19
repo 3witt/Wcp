@@ -20,10 +20,10 @@
 			<b>编辑</b>
 		</div>
 		<div class="doc_title">${DOCE.doc.title}</div>
-		<c:if test="${DOCE.imgUrl!=null }">
+		<%-- <c:if test="${DOCE.imgUrl!=null }">
 			<img src="${DOCE.imgUrl}" alt="内容图"
 				class="img-thumbnail center-block" />
-		</c:if>
+		</c:if> --%>
 		<c:if test="${DOCE.audit==null }">
 			<jsp:include page="../../operation/includeDocOperate.jsp"></jsp:include>
 		</c:if>
@@ -36,6 +36,12 @@
 	<c:if test="${DOCE.texts.id==DOCE.auditTemp.id||DOCE.auditTemp==null}">
 		<div class="col-md-12" id="docContentsId">
 			<div class="table-responsive" style="overflow: auto; border: 0px;">
+				<c:if test="${DOCE.doc.videoid!='' && DOCE.doc.videoid!=null}">
+					<hr />
+					<video controls width="100%" height="300px">
+					   	<source src="<PF:basePath/>actionImg/Publoadfile.do?id=${DOCE.doc.videoid}" />
+					</video>
+				</c:if>
 				<hr />
 				${DOCE.texts.text1}
 			</div>

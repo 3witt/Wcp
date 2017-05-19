@@ -44,7 +44,7 @@ public class DefaultIndexPageTaget extends TagSupport {
 	public static String getDefaultIndexPage() {
 		String isOpen = FarmParameterService.getInstance().getParameter("config.sys.opensource");
 		String Path = FarmParameterService.getInstance().getParameter("config.index.defaultpage");
-		if (isOpen.equals("true")) {
+		if (isOpen.equals("false")) {
 			Path = "websearch/PubHome.html";
 		} else {
 			Path = FarmParameterService.getInstance().getParameter("config.index.defaultpage");

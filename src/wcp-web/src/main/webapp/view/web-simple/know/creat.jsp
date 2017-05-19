@@ -6,7 +6,7 @@
 <html lang="zh-CN">
 <head>
 <base href="<PF:basePath/>" />
-<title>编辑知识-<PF:ParameterValue key="config.sys.title" /></title>
+<title>编辑文档-<PF:ParameterValue key="config.sys.title" /></title>
 <meta name="description"
 	content='<PF:ParameterValue key="config.sys.mate.description"/>'>
 <meta name="keywords"
@@ -95,7 +95,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1"> 是否发布到小组</label> <select
 										class="form-control" name="docgroup" id="docgroupId"
@@ -105,7 +105,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1"> 编辑权限 <span
 										class="alertMsgClass">*</span>
@@ -118,7 +118,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1"> 阅读权限 <span
 										class="alertMsgClass">*</span>
@@ -129,6 +129,19 @@
 										<option value="1">分类</option>
 										<option value="2">小组</option>
 									</select>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="exampleInputEmail1"> 上传视频 
+									</label> 
+									<input type="text" name="videoname" id="videoname" 
+										value="请选择文件" style="width: '100%'; border: 0px;" 
+										readonly="readonly" />
+									<input type="text" name="videoid" id="videoid" 
+										value="${videoid}" style="display: none " 
+										readonly="readonly">
+									<input type="button" id="uploadButton" value="选择文件" />
 								</div>
 							</div>
 						</div>
@@ -160,6 +173,37 @@
 			$('#knowtypeId').val($(this).attr('id'));
 			$('#knowtypeTitleId').val($(this).text());
 			$('#myModal').modal('hide');
+		});
+		KindEditor
+		.ready(function(K) {
+			var uploadbutton = K
+					.uploadbutton({
+						button : K('#uploadButton'),
+						fieldName : 'videoFile',
+						url : basePath + 'actionImg/PubFPuploadVideo.do',
+						afterUpload : function(data) {
+							if (data.videoerror === 0) {
+								$('#imgShowBoxId').attr('src',
+										data.videourl);
+								$('#videoname').val(data.videoName);
+								$('#videoid').val(data.videoid);
+								$('#videoname').parent().find(
+										".errorMsgClass").empty();//清空验证消息(临时实现方法)
+							} else {
+								if (data.videomessage == '') {
+									alert("请检查上传文件类型(mp4,ogg)以及文件大小不能超过104M");
+								} else {
+									alert(data.videomessage);
+								}
+							}
+						},
+						afterError : function(str) {
+							alert('自定义错误信息: ' + str);
+						}
+					});
+			uploadbutton.fileBox.change(function(e) {
+				uploadbutton.submit();
+			});
 		});
 		editor = KindEditor.create('textarea[id="contentId"]', {
 			resizeType : 1,

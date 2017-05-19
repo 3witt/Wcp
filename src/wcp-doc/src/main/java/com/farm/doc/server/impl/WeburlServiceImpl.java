@@ -130,6 +130,23 @@ public class WeburlServiceImpl implements WeburlServiceInter {
 		}
 		return null;
 	}
+	@Override
+	@Transactional
+	public List<Weburl> getWeburlList(){
+		try {
+			DataQuery query = createWeburlSimpleQuery(null);
+			query.setNoCount();
+			query.setPagesize(100);
+			query.setCache(Integer.valueOf(FarmParameterService.getInstance().getParameter("config.wcp.cache.brief")),
+					CACHE_UNIT.second);
+			DataResult result = query.search();
+			List<Weburl> list = result.getObjectList(Weburl.class);
+			return list;
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	@Override
 	@Transactional

@@ -13,10 +13,9 @@
 		<li><a
 			href="know/webdown.do?typeid=${typeid}&groupid=${groupid}">下载相关档案
 		</a></li>
-		<%-- 
-		<li><a
-			href="index/webSiteshowPage.htm?typeid=${typeid}&docgroup=${groupid}">上传HTML站点
-		</a></li> --%>
+		<%-- <li>
+			<a href="index/webSiteshowPage.htm?typeid=${typeid}&docgroup=${groupid}">上传HTML站点</a>
+		</li> --%>
 		<li><a href="webfile/add.do?typeid=${typeid}&groupid=${groupid}">上传文件资源
 		</a></li>
 	</ul>

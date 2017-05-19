@@ -144,14 +144,14 @@ public class KnowController extends WebUtils {
 	 * @return
 	 */
 	@RequestMapping("/addsubmit")
-	public ModelAndView submitAdd(String docgroup, String knowtitle, String knowtype, String text, String knowtag,
+	public ModelAndView submitAdd(String docgroup, String videoid, String knowtitle, String knowtype, String text, String knowtag,
 			String writetype, String readtype, HttpSession session) {
 		DocEntire doc = null;
 		try {
 			if ("0".equals(docgroup)) {
 				docgroup = null;
 			}
-			doc = KnowServiceImpl.creatKnow(knowtitle, knowtype, text, knowtag, POP_TYPE.getEnum(writetype),
+			doc = KnowServiceImpl.creatKnow(knowtitle,videoid, knowtype, text, knowtag, POP_TYPE.getEnum(writetype),
 					POP_TYPE.getEnum(readtype), docgroup, getCurrentUser(session));
 		} catch (Exception e) {
 			return ViewMode.getInstance().setError(e.toString())
@@ -170,7 +170,7 @@ public class KnowController extends WebUtils {
 	 */
 	@SuppressWarnings("deprecation")
 	@RequestMapping("/editsubmit")
-	public ModelAndView editCommit(String docid, String docgroup, String knowtitle, String knowtype, String text,
+	public ModelAndView editCommit(String docid, String videoid, String docgroup, String knowtitle, String knowtype, String text,
 			String knowtag, String writetype, String readtype, String editNote, HttpSession session) {
 		DocEntire doc = null;
 		try {
@@ -179,13 +179,13 @@ public class KnowController extends WebUtils {
 			}
 			// 高级权限用户修改
 			if (farmDocOperateRightImpl.isDel(getCurrentUser(session), farmDocManagerImpl.getDocOnlyBean(docid))) {
-				doc = KnowServiceImpl.editKnow(docid, knowtitle, knowtype, text, knowtag, POP_TYPE.getEnum(writetype),
+				doc = KnowServiceImpl.editKnow(docid, videoid, knowtitle, knowtype, text, knowtag, POP_TYPE.getEnum(writetype),
 						POP_TYPE.getEnum(readtype), docgroup, getCurrentUser(session), editNote);
 				return ViewMode.getInstance().returnRedirectUrl("/webdoc/view/Pub" + docid + ".html");
 			}
 			// 低级权限用户修改
 			{
-				doc = KnowServiceImpl.editKnow(docid, text, knowtag, getCurrentUser(session), editNote);
+				doc = KnowServiceImpl.editKnow(docid, videoid, text, knowtag, getCurrentUser(session), editNote);
 			}
 		} catch (Exception e) {
 			List<TypeBrief> types = farmDocTypeManagerImpl.getTypesForWriteDoc(getCurrentUser(session));

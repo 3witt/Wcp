@@ -188,10 +188,18 @@ public class FarmDocManagerImpl implements FarmDocManagerInter {
 					farmRfDoctypeDao.insertEntity(new FarmRfDoctype(entity.getType().getId(), entity.getDoc().getId()));
 				}
 			}
+			// 保存关联附件信息（中间表）
+			List<String> files = FarmDocFiles.getFilesIdFromHtml(entity.getTexts().getText1());
+			//设置第一张图片推荐图片id
+			if(files.size()!=0){
+				if(files.get(0)!=null){
+					entity.getDoc().setImgid(files.get(0));
+					System.out.println("设置推荐图片成功");
+				}
+			}
 			entity.setDoc(farmDocDao.insertEntity(entity.getDoc()));
 			{
-				// 保存关联附件信息（中间表）
-				List<String> files = FarmDocFiles.getFilesIdFromHtml(entity.getTexts().getText1());
+				
 				for (String id : files) {
 					farmRfDoctextfileDao.insertEntity(new FarmRfDoctextfile(entity.getDoc().getId(), id));
 					farmFileServer.submitFile(id);

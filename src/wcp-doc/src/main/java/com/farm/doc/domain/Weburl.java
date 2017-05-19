@@ -8,6 +8,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.farm.doc.server.commons.DocumentConfig;
+
 /* *
  *功能：推荐服务类
  *详细：
@@ -51,6 +53,17 @@ public class Weburl implements java.io.Serializable {
 	private int sort;
 	@Column(name = "FILEID")
 	private String fileid;
+	@Column(name = "IMGURL")
+	private String imgurl;
+
+	public String getImgurl() {
+		imgurl = DocumentConfig.getString("config.doc.download.url") + fileid;
+		return imgurl;
+	}
+
+	public void setImgurl(String imgurl) {
+		this.imgurl = DocumentConfig.getString("config.doc.download.url") + fileid;
+	}
 
 	public String getWebname() {
 		return this.webname;

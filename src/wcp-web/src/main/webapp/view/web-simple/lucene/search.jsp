@@ -18,7 +18,6 @@
 <body>
 	<jsp:include page="../commons/head.jsp"></jsp:include>
 	<jsp:include page="../commons/superContent.jsp"></jsp:include>
-	<jsp:include page="../commons/promoPhoto.jsp"></jsp:include>
 	<div class="containerbox">
 		<div class="container ">
 			<div style="margin-top: 20px;"></div>
@@ -39,12 +38,12 @@
 			</div>
 			<!-- /.row -->
 			<div class="row ">
+				<div class="col-sm-3 ">
+					<jsp:include page="../commons/includeHotKnowsMin.jsp"></jsp:include>
+				</div>
 				<div class="col-sm-9 hidden-xs">
 					<jsp:include page="commons/includeSearchTopDoc.jsp"></jsp:include>
 					<jsp:include page="../commons/includePubType.jsp"></jsp:include>
-				</div>
-				<div class="col-sm-3 ">
-					<jsp:include page="../commons/includeHotKnowsMin.jsp"></jsp:include>
 				</div>
 			</div>
 		</div>

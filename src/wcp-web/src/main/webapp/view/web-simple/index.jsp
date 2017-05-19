@@ -25,9 +25,9 @@
 	<div class="containerbox">
 		<div class="container">
 			<div style="margin-top: 20px;"></div>
-			<div class="widget-box shadow-box hidden-xs hidden-sm">
+			<div class="widget-box shadow-box ">
 				<div class="stream-list p-stream">
-					<div class="stream-item" id="loop-30">
+					<div class="" id="loop-30">
 						<PF:IfParameterEquals key="config.sys.news.topmax.show" val="true">
 							<div class="row">
 								<div class="col-sm-12">
@@ -40,16 +40,17 @@
 			</div>
 			<div style="margin-top: 20px;"></div>
 			<div class="row">
-				<div class="col-xs-12 col-md-3 side-right hidden-xs hidden-sm">
+				<div class="col-xs-12 col-md-3 side-right hidden-xs hidden-sm ">
 					<jsp:include page="commons/includeHotKnowsMin.jsp"></jsp:include>
-					<jsp:include page="docgroup/commons/includeHomePubGroup.jsp"></jsp:include>
+					<jsp:include page="commons/includePubType2.jsp"></jsp:include>
+					<%-- <jsp:include page="docgroup/commons/includeHomePubGroup.jsp"></jsp:include> --%>
 				</div>
 				<div class="col-sm-9">
 					<PF:IfParameterEquals key="config.sys.news.topmin.show" val="true">
 						<jsp:include page="commons/includeTopKnows.jsp"></jsp:include>
 					</PF:IfParameterEquals>
+					<jsp:include page="commons/indexVideo.jsp"></jsp:include>
 					<jsp:include page="commons/includeNewKnows.jsp"></jsp:include>
-					<jsp:include page="commons/includePubType.jsp"></jsp:include>
 				</div>
 			</div>
 		</div>

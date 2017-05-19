@@ -22,8 +22,8 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-			<%-- <li class="active"><a href="<DOC:defaultIndexPage/>"><span
-					class="glyphicon glyphicon-home"></span>&nbsp;首页</a></li> --%>
+			<li class="active"><a href="<DOC:defaultIndexPage/>"><span
+					class="glyphicon glyphicon-home"></span>&nbsp;首页</a></li>
 			<PF:IfParameterEquals key="config.sys.opensource" val="false">
 				<li class="active"><a href="home/Pubindex.html"><span
 						class="glyphicon glyphicon-home"></span>&nbsp;资讯</a></li>
@@ -50,12 +50,20 @@
 					type="hidden" id="pageNumId" name="pagenum">
 			</div>
 			<button type="submit" class="btn btn-default btn-sm">检索</button>
-			<jsp:include page="../operation/includeCreatOperate.jsp"></jsp:include>
+			<c:if test="${USEROBJ!=null}">
+				<c:if test="${USEROBJ.type=='3'}">
+					<jsp:include page="../operation/includeCreatOperate.jsp"></jsp:include>
+				</c:if>
+			</c:if>
 		</form>
 		<ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
 			<c:if test="${USEROBJ==null}">
 				<li class="active"><a href="login/webPage.html"><span
 						class="glyphicon glyphicon glyphicon-user"></span>&nbsp;登录</a></li>
+			</c:if>
+			<c:if test="${USEROBJ==null}">
+				<li class="active"><a href="webuser/PubRegist.html"><span
+						class="glyphicon glyphicon glyphicon-user"></span>&nbsp;注册</a></li>
 			</c:if>
 			<c:if test="${USEROBJ!=null}">
 				<li class="active"><a href="webuser/PubHome.do"><span

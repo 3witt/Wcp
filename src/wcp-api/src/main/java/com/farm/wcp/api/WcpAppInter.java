@@ -28,7 +28,7 @@ public interface WcpAppInter extends Remote {
 	 * @return
 	 * @throws RemoteException
 	 */
-	public String creatHTMLKnow(String knowtitle, String knowtypeId, String text, String knowtag, String currentUserId)
+	public String creatHTMLKnow(String knowtitle, String videoid, String knowtypeId, String text, String knowtag, String currentUserId)
 			throws RemoteException, DocCreatErrorExcepiton;
 
 	/**

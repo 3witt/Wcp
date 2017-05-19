@@ -28,6 +28,7 @@ import com.farm.doc.exception.CanNoWriteException;
 import com.farm.doc.server.FarmDocManagerInter;
 import com.farm.doc.server.FarmDocOperateRightInter;
 import com.farm.doc.server.FarmDocOperateRightInter.POP_TYPE;
+import com.farm.doc.server.commons.FarmDocFiles;
 import com.farm.doc.server.FarmDocTypeInter;
 import com.farm.doc.server.FarmFileManagerInter;
 import com.farm.lucene.face.WordAnalyzerFace;
@@ -54,7 +55,7 @@ public class KnowServiceImpl implements KnowServiceInter {
 	private static final Logger log = Logger.getLogger(KnowServiceImpl.class);
 	@Override
 	@Transactional
-	public DocEntire creatKnow(String knowtitle, String knowtypeId, String text, String knowtag, POP_TYPE pop_type_edit,
+	public DocEntire creatKnow(String knowtitle, String videoid, String knowtypeId, String text, String knowtag, POP_TYPE pop_type_edit,
 			POP_TYPE pop_type_read, String groupId, LoginUser currentUser) {
 		DocEntire doc = new DocEntire(new Doc());
 		doc.getDoc().setTitle(knowtitle);
@@ -67,22 +68,25 @@ public class KnowServiceImpl implements KnowServiceInter {
 		doc.getDoc().setState("1");
 		doc.getDoc().setPubtime(TimeTool.getTimeDate14());
 		doc.setType(farmDocTypeManagerImpl.getType(knowtypeId));
+		if(videoid!=null){
+			doc.getDoc().setVideoid(videoid);
+			}
 		doc = farmDocManagerImpl.createDoc(doc, currentUser);
 		return doc;
 	}
 
 	@Override
 	@Transactional
-	public DocEntire editKnow(String docid, String text, String knowtag, LoginUser currentUser, String editNote)
+	public DocEntire editKnow(String docid, String videoid, String text, String knowtag, LoginUser currentUser, String editNote)
 			throws CanNoWriteException {
 		Doc doc = farmDocManagerImpl.getDocOnlyBean(docid);
-		return editKnow(docid, doc.getTitle(), null, text, knowtag, POP_TYPE.getEnum(doc.getWritepop()),
+		return editKnow(docid, videoid, doc.getTitle(), null, text, knowtag, POP_TYPE.getEnum(doc.getWritepop()),
 				POP_TYPE.getEnum(doc.getReadpop()), doc.getDocgroupid(), currentUser, editNote);
 	}
 
 	@Override
 	@Transactional
-	public DocEntire editKnow(String id, String knowtitle, String knowtype, String text, String knowtag,
+	public DocEntire editKnow(String id, String videoid, String knowtitle, String knowtype, String text, String knowtag,
 			POP_TYPE pop_type_edit, POP_TYPE pop_type_read, String groupId, LoginUser currentUser, String editNote)
 					throws CanNoWriteException {
 		DocEntire entity = farmDocManagerImpl.getDoc(id);
@@ -96,6 +100,16 @@ public class KnowServiceImpl implements KnowServiceInter {
 		entity.getDoc().setReadpop(pop_type_read.getValue());
 		FarmDoctype type = farmDocTypeManagerImpl.getType(knowtype);
 		entity.setType(type);
+		entity.getDoc().setVideoid(videoid);
+		// 保存关联附件信息（中间表）
+		List<String> files = FarmDocFiles.getFilesIdFromHtml(entity.getTexts().getText1());
+		//设置第一张图片推荐图片id
+	    if(files.size()!=0){
+			if(files.get(0)!=null){
+				entity.getDoc().setImgid(files.get(0));
+				System.out.println("设置推荐图片成功");
+			}
+		}
 		entity = farmDocManagerImpl.editDocByUser(entity, editNote, currentUser);
 		return entity;
 	}

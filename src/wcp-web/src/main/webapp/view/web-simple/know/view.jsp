@@ -25,7 +25,7 @@
 	<div class="containerbox">
 		<div class="container ">
 			<div class="row" style="margin-top: 70px;">
-				<div class="col-md-3  visible-lg visible-md">
+				<div class="col-md-3  visible-lg visible-md pull-right">
 					<jsp:include page="../know/commons/includeNavigationDoc.jsp"></jsp:include>
 				</div>
 				<div class="col-md-9">
@@ -38,7 +38,11 @@
 						<div class="panel-body">
 							<jsp:include page="../know/commons/includeAuthInfo.jsp"></jsp:include>
 							<jsp:include page="../know/commons/includeTagInfo.jsp"></jsp:include>
-							<jsp:include page="../know/commons/includeDocVersions.jsp"></jsp:include>
+							<c:if test="${USEROBJ!=null}">
+								<c:if test="${USEROBJ.type=='3'}">
+									<jsp:include page="../know/commons/includeDocVersions.jsp"></jsp:include>
+								</c:if>
+							</c:if>
 							<jsp:include page="../know/commons/includeDocFiles.jsp"></jsp:include>
 							<jsp:include page="../know/commons/includeTypeDoc.jsp"></jsp:include>
 							<jsp:include page="../lucene/commons/includeLuceneResultMin.jsp"></jsp:include></div>

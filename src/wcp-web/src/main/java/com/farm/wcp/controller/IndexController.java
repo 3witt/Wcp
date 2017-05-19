@@ -23,6 +23,7 @@ import com.farm.core.sql.query.DBRule;
 import com.farm.core.sql.query.DBSort;
 import com.farm.core.sql.query.DataQuery;
 import com.farm.core.sql.result.DataResult;
+import com.farm.doc.domain.Weburl;
 import com.farm.doc.domain.ex.DocBrief;
 import com.farm.doc.domain.ex.GroupBrief;
 import com.farm.doc.domain.ex.TypeBrief;
@@ -73,7 +74,7 @@ public class IndexController extends WebUtils {
 	@RequestMapping("/Pubindex")
 	public ModelAndView index(HttpSession session) {
 		// 获取前五条置顶文档
-		List<DocBrief> topdocs = farmDocRunInfoImpl.getPubTopDoc(5);
+		List<DocBrief> topdocs = farmDocRunInfoImpl.getPubTopDoc(4);
 		// 加载热词
 		List<DocBrief> hotdocs = farmDocRunInfoImpl.getPubHotDoc(10);
 		// 最新知识
@@ -82,9 +83,12 @@ public class IndexController extends WebUtils {
 		List<TypeBrief> typesons = farmDocTypeManagerImpl.getPopTypesForReadDoc(getCurrentUser(session));
 		// 获得最热小组
 		List<GroupBrief> groups = farmDocgroupManagerImpl.getHotDocGroups(10, getCurrentUser(session));
+		//获取推荐服务（轮播）
+		List<Weburl> weburls = weburlServiceImpl.getWeburlList();
+		
 		return ViewMode.getInstance().putAttr("hotdocs", hotdocs).putAttr("groups", groups)
 				.putAttr("typesons", typesons).putAttr("newdocs", newdocs).putAttr("topDocList", topdocs)
-				.returnModelAndView(ThemesUtil.getThemePath() + "/index");
+				.putAttr("weburlList", weburls).returnModelAndView(ThemesUtil.getThemePath() + "/index");
 	}
 
 	/**

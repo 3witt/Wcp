@@ -12,7 +12,7 @@
 		<div class="stream-item" id="loop-30">
 			<div class="row">
 				<c:forEach var="topDoc" items="${topDocList}">
-					<div class="col-md-6" style="min-height: 350px;">
+					<div class="col-md-4" style="min-height: 250px;">
 						<div class="doc_node_max_title" style="max-height: 50px;overflow: hidden;">
 							<a class="doc_node_max_title" style="font-size: 28px;"
 								href="webdoc/view/Pub${topDoc.docid}.html">${topDoc.title}</a>

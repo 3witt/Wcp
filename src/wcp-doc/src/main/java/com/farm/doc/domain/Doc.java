@@ -30,6 +30,8 @@ public class Doc implements java.io.Serializable {
         private String id;
         @Column(name = "DOCGROUPID", length = 32)
         private String docgroupid;
+        @Column(name = "VIDEOID", length = 32)
+        private String videoid;
         @Column(name = "RUNINFOID", length = 32, nullable = false)
         private String runinfoid;
         @Column(name = "READPOP", length = 2, nullable = false)
@@ -79,9 +81,15 @@ public class Doc implements java.io.Serializable {
         public String  getDocgroupid() {
           return this.docgroupid;
         }
-        public void setDocgroupid(String docgroupid) {
+		public void setDocgroupid(String docgroupid) {
           this.docgroupid = docgroupid;
         }
+        public String getVideoid() {
+			return this.videoid;
+		}
+		public void setVideoid(String videoid) {
+			this.videoid = videoid;
+		}
         public String  getRuninfoid() {
           return this.runinfoid;
         }

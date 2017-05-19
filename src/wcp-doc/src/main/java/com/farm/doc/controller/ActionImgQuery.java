@@ -100,6 +100,63 @@ public class ActionImgQuery extends WebUtils {
 		return ViewMode.getInstance().putAttr("error", error).putAttr("url", url).putAttr("message", message)
 				.putAttr("id", id).putAttr("fileName", fileName).returnObjMode();
 	}
+	
+	/**
+	 * 上传视频附件文件
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/PubFPuploadVideo.do")
+	@ResponseBody
+	public Map<String, Object> uploadVideo(@RequestParam(value = "videoFile", required = false) MultipartFile file,
+			HttpServletRequest request, ModelMap model, HttpSession session) {
+		int error;
+		String message;
+		String url = null;
+		String id = null;
+		String fileName = "";
+		try {
+			String fileid = null;
+			// 验证大小
+			String maxLength = FarmParameterService.getInstance().getParameter("config.doc.upload.length.max");
+			if (file.getSize() > Integer.valueOf(maxLength)) {
+				throw new Exception("文件不能超过" + Integer.valueOf(maxLength) / 1024 + "kb");
+			}
+			CommonsMultipartFile cmFile = (CommonsMultipartFile) file;
+			DiskFileItem item = (DiskFileItem) cmFile.getFileItem();
+			{// 小于8k不生成到临时文件，临时解决办法。zhanghc20150919
+				if (!item.getStoreLocation().exists()) {
+					item.write(item.getStoreLocation());
+				}
+			}
+
+			fileName = URLEncoder.encode(item.getName(), "utf-8");
+			// 验证类型
+			List<String> types = parseIds(FarmParameterService.getInstance().getParameter("config.doc.upload.videotypes")
+					.toUpperCase().replaceAll("，", ","));
+			if (!types.contains(file.getOriginalFilename()
+					.substring(file.getOriginalFilename().lastIndexOf(".") + 1, file.getOriginalFilename().length())
+					.toUpperCase())) {
+				throw new Exception("文件类型错误，允许的类型为：" + FarmParameterService.getInstance()
+						.getParameter("config.doc.upload.videotypes").toUpperCase().replaceAll("，", ","));
+			}
+			System.out.println("---------------文件类型"+types.contains(file.getOriginalFilename()
+					.substring(file.getOriginalFilename().lastIndexOf(".") + 1, file.getOriginalFilename().length())
+					.toUpperCase()));
+			fileid = farmFileManagerImpl.saveFile(item.getStoreLocation(), FILE_TYPE.HTML_INNER_IMG,
+					file.getOriginalFilename(), getCurrentUser(session));
+			error = 0;
+			url = farmFileManagerImpl.getFileURL(fileid);
+			message = "";
+			id = fileid;
+		} catch (Exception e) {
+			e.printStackTrace();
+			error = 1;
+			message = e.getMessage();
+		}
+		return ViewMode.getInstance().putAttr("videoerror", error).putAttr("videourl", url).putAttr("videomessage", message)
+				.putAttr("videoid", id).putAttr("videoName", fileName).returnObjMode();
+	}
 
 	/**
 	 * 上传图片文件

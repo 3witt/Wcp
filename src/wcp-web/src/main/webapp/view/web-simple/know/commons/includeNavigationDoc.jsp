@@ -23,8 +23,11 @@
 	</div>
 	<div class="panel-heading">
 		<ul style="margin-left: -20px;">
-			<li><a style="color: #D9534F;" id='markVersionListSuperLink'>文档版本（${fn:length(VERSIONS)}）</a>
-			</li>
+			<c:if test="${USEROBJ!=null}">
+				<c:if test="${USEROBJ.type=='3'}">
+					<li><a style="color: #D9534F;" id='markVersionListSuperLink'>文档版本（${fn:length(VERSIONS)}）</a></li>
+				</c:if>
+			</c:if>
 			<c:if test="${fn:length(DOCE.files)>0}">
 				<li><a style="color: #D9534F;" id='markFileListSuperLink'>文档附件（${fn:length(DOCE.files)}）</a>
 				</li>

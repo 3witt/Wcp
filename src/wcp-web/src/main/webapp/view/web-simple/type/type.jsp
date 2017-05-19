@@ -40,8 +40,12 @@
 						</div>
 					</div>
 					<div style="margin-top: 16px;"></div>
-					<c:if test="${type!=null}"><jsp:include
-							page="../operation/includeCreatOperate.jsp"></jsp:include>
+					<c:if test="${type!=null}">
+						<c:if test="${USEROBJ!=null}">
+							<c:if test="${USEROBJ.type=='3'}">
+								<jsp:include page="../operation/includeCreatOperate.jsp"></jsp:include>
+							</c:if>
+						</c:if>
 					</c:if>
 					<div class="panel panel-default">
 						<div class="panel-body">
